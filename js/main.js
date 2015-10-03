@@ -54,30 +54,38 @@ var injectData = function(info) {
 		var movieTitle = document.createElement("h2");
 		movieTitle.innerHTML = info.data.movies[i].title_long;
     
-    var movieInfo = document.createElement("div");
-    movieInfo.classList.add("movie-info");
+    	var movieInfo = document.createElement("div");
+    	movieInfo.classList.add("movie-info");
 		
 		var torrentUrl = document.createElement("a");
-    torrentUrl.classList.add("btn");
+    	torrentUrl.classList.add("btn");
 		torrentUrl.innerHTML = "Download";
 		torrentUrl.setAttribute("href", info.data.movies[i].torrents[0].url);
     
+<<<<<<< HEAD
     var movieLink = document.createElement("a");
     movieLink.classList.add("fa");
     movieLink.classList.add("fa-link");
     movieLink.setAttribute("href", info.data.movies[i].url);
     movieLink.setAttribute("target", "_blank");
+=======
+    	var movieLink = document.createElement("a");
+    	movieLink.classList.add("fa");
+    	movieLink.classList.add("fa-link");
+    	movieLink.setAttribute("href", info.data.movies[i].url);
+    	movieLink.setAttribute("target", "_blank");
+>>>>>>> Changing some classes and align movies in the center
     
-    var movieRating = document.createElement("a");
-    movieRating.classList.add("fa");
-    movieRating.classList.add("fa-heart");
-    movieRating.innerHTML = info.data.movies[i].rating;
+    	var movieRating = document.createElement("a");
+    	movieRating.classList.add("fa");
+    	movieRating.classList.add("fa-heart");
+    	movieRating.innerHTML = info.data.movies[i].rating;
 		
 		movieHolder.appendChild(movieImage);
 		movieHolder.appendChild(movieTitle);
-    movieInfo.appendChild(torrentUrl);
-    movieInfo.appendChild(movieLink);
-    movieInfo.appendChild(movieRating);
+    	movieInfo.appendChild(torrentUrl);
+    	movieInfo.appendChild(movieLink);
+    	movieInfo.appendChild(movieRating);
 		movieHolder.appendChild(movieInfo);
 		
 		moviesList.appendChild(movieHolder);
