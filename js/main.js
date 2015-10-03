@@ -64,7 +64,7 @@ var injectData = function(info) {
     
     var movieLink = document.createElement("a");
     movieLink.classList.add("fa");
-    movieLink.classList.add("fa-external-link");
+    movieLink.classList.add("fa-link");
     movieLink.setAttribute("href", info.data.movies[i].url);
     movieLink.setAttribute("target", "_blank");
     
