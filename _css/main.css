@@ -1,0 +1,119 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font: 1.2em/1.5 "Roboto Slab", sans-serif;
+	background: #333;
+  color: rgba(255,255,255, .7);
+}
+
+h1,
+h2 {
+	text-align: center;
+  font-family: 'Montserrat', sans-serif;
+	font-size: 0.8em;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+	align-items: flex-end;
+}
+
+.search-container {
+	position: relative;
+}
+
+.search-form input {
+	text-indent: 32px;
+	line-height: 30px;
+	background: none;
+	border: none;
+	color: white;
+	border-bottom: 1px solid rgba(255,255,255, .6);
+}
+
+.search-form input:focus {
+	outline: 0;
+}
+
+.search-container .fa-search {
+	position: absolute;
+	top: 7px;
+	left: 10px;
+}
+
+.search-form button {
+  margin-left: 15px;
+}
+
+.btn {
+	padding: .500em;
+	text-decoration: none;
+  border: none;
+	cursor: pointer;
+	color: white;
+	background: limegreen;
+  border-radius: 6px;
+}
+
+.btn:hover {
+	opacity: .7;
+}
+
+#movies {
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	
+	margin: 1em 0;
+}
+
+.movie {
+	margin: 1em;
+}
+
+.movie img {
+	display: block;
+	margin: 0 auto;
+  
+  box-shadow: 2px 3px 4px rgba(255,255,255, .6);
+	transition: box-shadow .3s;
+}
+
+.movie img:hover {
+	box-shadow: 4px 6px 8px rgba(255,255,255, .6);
+}
+
+.movie-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.movie-info h2 {
+	display: block;
+}
+
+.movie-info .fa-heart {
+  align-self: center;
+  font-size: 1.5em;
+  color: red;
+}
+
+.movie-info .fa-heart:before {
+  padding-right: 5px;
+}
+
+.movie-info .fa-external-link {
+  align-self: center;
+  font-size: 1.5em;
+  text-decoration: none;
+  color: rgba(255,255,255, .8);
+}
