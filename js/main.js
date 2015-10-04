@@ -1,8 +1,8 @@
 var moviesList = document.getElementById("movies");
 
 $("#search").click(function(event) {
-  event.preventDefault();
-  var search = $("#request").val();
+  	event.preventDefault();
+  	var search = $("#request").val();
 	console.log(search);
 	makeCORSRequest(search);
 });
@@ -62,19 +62,17 @@ var injectData = function(info) {
 		torrentUrl.innerHTML = "Download";
 		torrentUrl.setAttribute("href", info.data.movies[i].torrents[0].url);
     
-<<<<<<< HEAD
-    var movieLink = document.createElement("a");
-    movieLink.classList.add("fa");
-    movieLink.classList.add("fa-link");
-    movieLink.setAttribute("href", info.data.movies[i].url);
-    movieLink.setAttribute("target", "_blank");
-=======
+	    var movieLink = document.createElement("a");
+	    movieLink.classList.add("fa");
+	    movieLink.classList.add("fa-link");
+	    movieLink.setAttribute("href", info.data.movies[i].url);
+	    movieLink.setAttribute("target", "_blank");
+
     	var movieLink = document.createElement("a");
     	movieLink.classList.add("fa");
     	movieLink.classList.add("fa-link");
     	movieLink.setAttribute("href", info.data.movies[i].url);
     	movieLink.setAttribute("target", "_blank");
->>>>>>> Changing some classes and align movies in the center
     
     	var movieRating = document.createElement("a");
     	movieRating.classList.add("fa");
