@@ -48,7 +48,7 @@ var injectData = function(info) {
 	var templateCompiled = Handlebars.compile(templateScript);
 
 	// Pass our data to the template...
-	var templateData = templateCompiled(info);
+	var templateData = templateCompiled(info.data);
 
 	// Add the compiled html to the page...
 	$("#movies").html(templateData);
