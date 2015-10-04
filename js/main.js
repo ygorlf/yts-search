@@ -1,5 +1,3 @@
-var moviesList = document.getElementById("movies");
-
 $("#search").click(function(event) {
   	event.preventDefault();
   	var search = $("#request").val();
@@ -31,7 +29,6 @@ var makeCORSRequest = function(search) {
 	}
 	xhr.onload = function() {
 		var ytsInfo = xhr.responseText;
-		moviesList.innerHTML = "";
 		ytsData = JSON.parse(ytsInfo);
 		injectData(ytsData);
 	};
@@ -44,50 +41,18 @@ var makeCORSRequest = function(search) {
 
 // Creating HTML Structure...
 var injectData = function(info) {
-	for(var i = 0; i < info.data.movies.length; i++) {
-		var movieHolder = document.createElement("div");
-		movieHolder.classList.add("movie");
-		
-		var movieImage = document.createElement("img");
-		movieImage.setAttribute("src", info.data.movies[i].medium_cover_image);
-		
-		var movieTitle = document.createElement("h2");
-		movieTitle.innerHTML = info.data.movies[i].title_long;
-    
-    	var movieInfo = document.createElement("div");
-    	movieInfo.classList.add("movie-info");
-		
-		var torrentUrl = document.createElement("a");
-    	torrentUrl.classList.add("btn");
-		torrentUrl.innerHTML = "Download";
-		torrentUrl.setAttribute("href", info.data.movies[i].torrents[0].url);
-    
-	    var movieLink = document.createElement("a");
-	    movieLink.classList.add("fa");
-	    movieLink.classList.add("fa-link");
-	    movieLink.setAttribute("href", info.data.movies[i].url);
-	    movieLink.setAttribute("target", "_blank");
+	// Grab the template script...
+	var templateScript = $("#movies-template");
 
-    	var movieLink = document.createElement("a");
-    	movieLink.classList.add("fa");
-    	movieLink.classList.add("fa-link");
-    	movieLink.setAttribute("href", info.data.movies[i].url);
-    	movieLink.setAttribute("target", "_blank");
-    
-    	var movieRating = document.createElement("a");
-    	movieRating.classList.add("fa");
-    	movieRating.classList.add("fa-heart");
-    	movieRating.innerHTML = info.data.movies[i].rating;
-		
-		movieHolder.appendChild(movieImage);
-		movieHolder.appendChild(movieTitle);
-    	movieInfo.appendChild(torrentUrl);
-    	movieInfo.appendChild(movieLink);
-    	movieInfo.appendChild(movieRating);
-		movieHolder.appendChild(movieInfo);
-		
-		moviesList.appendChild(movieHolder);
-	}
+	// Compile the template...
+	var templateCompiled = Handlebars.compile(templateScript);
+
+	// Pass our data to the template...
+	var templateData = templateCompiled(info);
+
+	// Add the compiled html to the page...
+	$("#movies").html(templateData);
+
 };
 
 

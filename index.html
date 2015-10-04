@@ -4,20 +4,35 @@
 	<meta charset="UTF-8">
 	<title>Latest YTS Movies</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 	<link href="css/main.css" rel="stylesheet">
+	<script src="js/handlebars.js"></script>
 </head>
 <body>
-  <h1>Search the best movies!</h1>
-  <form class="search-form">
+	<h1>Search the best movies!</h1>
+	<form class="search-form">
 		<div class="search-container">
 			<i class="fa fa-search"></i>
-    	<input type="text" id="request" placeholder="Search your movies...">
+    		<input type="text" id="request" placeholder="Search your movies...">
 		</div>
-    <button id="search" class="btn">Search</button>
-  </form>
-	<div id="movies"> <!--  here will be loaded your videos --> </div>
+    	<button id="search" class="btn">Search</button>
+	</form>
+	<div id="movies">
+		<script id="movies-template" type="text/x-handlebars-template">
+		{{#each movies}}
+		<div class="movie">
+			<img src="{{}}">
+			<h2>{{title_long}}</h2>
+			<div class="movie-info">
+				<a class="btn" href={{torrents.url}}>Download</a>
+				<a class="fa fa-link" href="{{url}}" target="_blank"></a>
+				<a class="fa fa-heart">{{rating}}</a>
+			</div>
+		</div>
+		{{/each}}
+		</script>
+	</div>
 	
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="js/main.js"></script>
