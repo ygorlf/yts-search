@@ -1,3 +1,9 @@
+// Grab the template script...
+var templateScript = $("#movies-template").html();
+
+// Compile the template...
+var templateCompiled = Handlebars.compile(templateScript);
+
 $("#search").click(function(event) {
   	event.preventDefault();
   	var search = $("#request").val();
@@ -30,7 +36,13 @@ var makeCORSRequest = function(search) {
 	xhr.onload = function() {
 		var ytsInfo = xhr.responseText;
 		ytsData = JSON.parse(ytsInfo);
-		injectData(ytsData);
+		if(ytsData.data.movie_count === 0) {
+			alert("No Movies Founded...");
+			return;
+		} else {
+			// Pass our data to the template...
+			$(movies).html(templateCompiled(ytsData.data));
+		}
 	};
 
 	xhr.onerror = function() {
@@ -38,24 +50,3 @@ var makeCORSRequest = function(search) {
 	};
 	xhr.send();
 };
-
-// Creating HTML Structure...
-var injectData = function(info) {
-	// Grab the template script...
-	var templateScript = $("#movies-template").html();
-
-	// Compile the template...
-	var templateCompiled = Handlebars.compile(templateScript);
-
-	// Pass our data to the template...
-	var templateData = templateCompiled(info.data);
-
-	// Add the compiled html to the page...
-	$("#movies").html(templateData);
-
-};
-
-
-
-
-
