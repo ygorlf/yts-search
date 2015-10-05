@@ -104,7 +104,6 @@ h1 {
 .movie-info .fa-heart {
   align-self: center;
   font-size: 1.5em;
-  color: red;
 }
 
 .movie-info .fa-heart:before {

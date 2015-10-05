@@ -37,11 +37,12 @@ var makeCORSRequest = function(search) {
 		var ytsInfo = xhr.responseText;
 		ytsData = JSON.parse(ytsInfo);
 		if(ytsData.data.movie_count === 0) {
-			alert("No Movies Founded...");
+			$("#movies").html("");
+			$("#movies").html("<h1>No movies founded...</h1>");
 			return;
 		} else {
 			// Pass our data to the template...
-			$(movies).html(templateCompiled(ytsData.data));
+			$("#movies").html(templateCompiled(ytsData.data));
 		}
 	};
 
