@@ -1,20 +1,20 @@
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  font: 1.2em/1.5 "Roboto Slab", sans-serif;
+	font: 1.2em/1.5 "Roboto Slab", sans-serif;
 	background: #333;
-  color: rgba(255,255,255, .7);
+	color: rgba(255,255,255, .7);
 }
 
 h1,
 h2 {
 	text-align: center;
-  font-family: 'Montserrat', sans-serif;
-	font-size: 0.8em;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 0.9em;
 }
 
 h1 {
@@ -22,8 +22,8 @@ h1 {
 }
 
 .search-form {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 	align-items: flex-end;
 }
 
@@ -51,17 +51,17 @@ h1 {
 }
 
 .search-form button {
-  margin-left: 15px;
+	margin-left: 15px;
 }
 
 .btn {
 	padding: .500em;
 	text-decoration: none;
-  border: none;
+	border: none;
 	cursor: pointer;
 	color: white;
 	background: limegreen;
-  border-radius: 6px;
+	border-radius: 6px;
 }
 
 .btn:hover {
@@ -84,7 +84,7 @@ h1 {
 	display: block;
 	margin: 0 auto;
   
-  box-shadow: 2px 3px 4px rgba(255,255,255, .6);
+	box-shadow: 2px 3px 4px rgba(255,255,255, .6);
 	transition: box-shadow .3s;
 }
 
@@ -93,8 +93,8 @@ h1 {
 }
 
 .movie-info {
-  display: flex;
-  justify-content: space-around;
+	display: flex;
+	justify-content: space-around;
 }
 
 .movie-info h2 {
@@ -102,17 +102,17 @@ h1 {
 }
 
 .movie-info .fa-heart {
-  align-self: center;
-  font-size: 1.5em;
+	align-self: center;
+	font-size: 1.5em;
 }
 
 .movie-info .fa-heart:before {
-  padding-right: 5px;
+	padding-right: 5px;
 }
 
 .movie-info .fa-link {
-  align-self: center;
-  font-size: 1.5em;
-  text-decoration: none;
-  color: rgba(255,255,255, .8);
+	align-self: center;
+	font-size: 1.5em;
+	text-decoration: none;
+	color: rgba(255,255,255, .8);
 }

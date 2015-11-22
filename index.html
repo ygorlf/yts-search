@@ -19,13 +19,12 @@
 	</form>
 	<div id="movies">
 		<script id="movies-template" type="text/x-handlebars-template">
-		{{#each movies}}
+		{{#each results}}
 		<div class="movie">
-			<img src="{{this.medium_cover_image}}">
-			<h2>{{this.title_long}}</h2>
+			<img src="http://image.tmdb.org/t/p/w185/{{this.poster_path}}">
+			<h2>{{this.title}}</h2>
 			<div class="movie-info">
-				<a class="btn" href="{{this.torrents.0.url}}">Download</a>
-				<a class="fa fa-heart">{{this.rating}}</a>
+				<a class="fa fa-heart">{{this.vote_average}}</a>
 			</div>
 		</div>
 		{{/each}}

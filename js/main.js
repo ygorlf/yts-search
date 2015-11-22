@@ -26,7 +26,8 @@ var createCORSRequest = function(method, url) {
 };
 
 var makeCORSRequest = function(search) {
-	var url = "https://yts.to/api/v2/list_movies.json" + "?query_term=" + search;
+	var apiKey = "674e056a0305570de7e7dea12691bb59";
+	var url = "http://api.themoviedb.org/3/search/movie?" + "api_key=" + apiKey + "&query=" + search;
 	
 	var xhr = createCORSRequest("GET", url);
 	if(!xhr) {
@@ -36,13 +37,13 @@ var makeCORSRequest = function(search) {
 	xhr.onload = function() {
 		var ytsInfo = xhr.responseText;
 		ytsData = JSON.parse(ytsInfo);
-		if(ytsData.data.movie_count === 0) {
-			$("#movies").html("");
+		if(ytsData.total_results === 0) {
 			$("#movies").html("<h1>No movies founded...</h1>");
 			return;
 		} else {
 			// Pass our data to the template...
-			$("#movies").html(templateCompiled(ytsData.data));
+			$("#movies").html(templateCompiled(ytsData));
+			console.log(ytsData);
 		}
 	};
 
